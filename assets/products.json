@@ -1,44 +1,1124 @@
 [
   {
-    "name": "АФА",
-    "imageUrls": ["assets/images/afa1.jpg", "assets/images/afa2.jpg"],
-    "description": "Предназначены для исследования и контроля аэродисперсных примесей (аэрозолей), содержащихся в воздухе или других газах, при разовом периодическом отборе проб. Фильтры АФА изготовляются различной модификации применительно по методу анализа: АФА-ХП; АФА-ХА — химический; АФА-РМП; АфА-РМА — радиометрический; АФА-РСП -радиоспектрометрический; АФА-РГП — радиографический; АФА-ВП — весовой; АФА-ДП — дисперсионный; АФА-БА — бактериальный. Для фильтров АФА выпускаются соответствующие фильтродержатели ИРА-10, ИРА-20.",
-    "designations": ["Разное"],
-    "standard": "ГОСТ 12345-67"
+    "name": "ШБ–1 «Лепесток–200»",
+    "imageUrls": [ "Kakotkin_com_02092022_0137_DxO.png","Kakotkin_com_02092022_0137_DxO.png", "shb200.png"],
+    "description": "shb1200",
+    "designations": [
+      "FFP3",
+      "NR",
+      "D",
+      "ΦΠ",
+      "ЛЕПЕСТОК",
+      "До 200 ПДК"
+    ],
+    "standard": "ГОСТ 12.4.028-76, ГОСТ 12.4.294-2015\n ТР ТС 019/2011"
   },
   {
-    "name": "«СПИРО-УНИВЕРСАЛ",
-    "imageUrls": ["assets/images/Spiroun1.jpg", "assets/images/Spiroun2.jpg"],
-    "description": "Комбинезон «СПИРО-универсал» для защиты основной спецодежды и отдельных частей кожных покровов от твердых аэрозолей химических веществ, пыли, химических испарений Комбинезон «СПИРО-универсал» специальный дополнительный   Комбинезон для химической защиты представляет собой одежду для защиты всего тела, т.е. он закрывает голову, туловище, руки и ноги. Комбинезон отрезной по линии груди, цельнокроеные рукава, без плечевых швов, бесшовная спинка. Брючная часть не отрезная по линии талии. Минимальное количество швов на изделии обеспечивает наиболее прочную конструкцию, обеспечивающую оптимальную защиту. • Для удобства низ рукавов регулируется эластичной лентой с дополнительной фиксацией на большом пальце с помощью эластичной ленты. • Пояс на участке задних половинок брюк стягивается настроченной с внутренней стороны эластичной лентой. • Низ брюк регулируется эластичной лентой. • Капюшон повышенной прочности состоит из трех частей.  Для надежной фиксации капюшона на голове по линии обтюрации втачан эластичный шнур с фиксаторами. • Спереди центральная бортовая застёжка молния, закрытая планкой-клапаном, фиксирующейся с помощью двустороннего скотча. ",
-    "designations": ["Спиро"],
-    "standard": "ГОСТ 12345-67"
+    "name": "«Лепесток–40»",
+    "imageUrls": ["Kakotkin_com_02092022_0140_DxO.png","Kakotkin_com_02092022_0139_DxO.png", "shb40.png"],
+    "description": "lep40e",
+    "designations": [
+      "FFP2",
+      "NR",
+      "D",
+      "ΦΠ",
+      "ЛЕПЕСТОК",
+      "До 40 ПДК"
+    ],
+    "standard": "ГОСТ 12.4.028–76 и ГОСТ 12.4.294–2015\n ТР ТС 019/2011"
+  },
+  {
+    "name": "«Лепесток–200  кл»",
+    "imageUrls": ["Kakotkin_com_02092022_0169_DxO.png", "Kakotkin_com_02092022_0170_DxO.png", "Kakotkin_com_02092022_0136_DxO.png"],
+    "description": "lep200sbkl",
+    "designations": [
+      "FFP3",
+      "R",
+      "NR",
+      "D",
+      "ЛЕПЕСТОК",
+      "С клапаном для дыхания",
+      "До 50 ПДК"
+    ],
+    "standard": "ТУ 32.99.11-028-08625805-2018\nГОСТ 12.4.294-2015\nТР ТС 019/2011 "
+  },
+  {
+    "name": "«Лепесток–5 СБ»",
+    "imageUrls": ["Kakotkin_com_02092022_0143_DxO.png", "Kakotkin_com_02092022_0144_DxO.png", "lep5sb.png"],
+    "description": "lep5sb",
+    "designations": [
+      "FFP1",
+      "До 4 ПДК",
+      "ЛЕПЕСТОК"
+    ],
+    "standard": "ТУ 2568-006-08625805-06\nГОСТ 12.4.294-2015\nТР ТС 019/2011"
+  },
+  {
+    "name": "«Лепесток–5 СБ кл»",
+    "imageUrls": ["Kakotkin_com_02092022_0145_DxO.png", "Kakotkin_com_02092022_0146_DxO.png", "lep5sbkl.png"],
+    "description": "lep5sbkl",
+    "designations": [
+      "FFP1",
+      "До 4 ПДК",
+      "С клапаном для дыхания",
+      "ЛЕПЕСТОК"
+    ],
+    "standard": "ТУ 2568-006-08625805-06\nГОСТ 12.4.294-2015\nТР ТС 019/2011"
+  },
+  {
+    "name": "«Лепесток–40 СБ»",
+    "imageUrls": ["Kakotkin_com_02092022_0147_DxO.png", "Kakotkin_com_02092022_0148_DxO.png", "lep40sb.png"],
+    "description": "lep40sb",
+    "designations": [
+      "FFP2",
+      "NR",
+      "R",
+      "D",
+      "До 12 ПДК",
+      "ЛЕПЕСТОК"
+    ],
+    "standard": "ТУ 32.99.11-028-08625805-2018\nГОСТ 12.4.294-2015\nТР ТС 019/2011"
+  },
+  {
+    "name": "«Лепесток–40 СБ кл»",
+    "imageUrls": ["Kakotkin_com_02092022_0159_DxO.png", "Kakotkin_com_02092022_0160_DxO.png", "leb40sbkl.png"],
+    "description": "lep40sbkl",
+    "designations": [
+      "FFP2",
+      "RD",
+      "D",
+      "R",
+      "До 12 ПДК",
+      "С клапаном для дыхания",
+      "ЛЕПЕСТОК"
+    ],
+    "standard": "ТУ 32.99.11-028-08625805-2018\nГОСТ 12.4.294-2015.\nТР ТС 019/2011"
+  },
+  {
+    "name": "«Лепесток–200 СБ»",
+    "imageUrls": ["Kakotkin_com_02092022_0151_DxO.png", "Kakotkin_com_02092022_0152_DxO.png", "Kakotkin_com_02092022_0127_DxO.png"],
+    "description": "lep200sb",
+    "designations": [
+      "FFP3",
+      "NR",
+      "D",
+      "R",
+      "До 50 ПДК",
+      "ЛЕПЕСТОК"
+    ],
+    "standard": "ТУ 32.99.11-028-08625805-2018\n ГОСТ 12.4.294-2015\nТР ТС 019/2011"
+  },
+  {
+    "name": "«Лепесток–200 СБ кл»",
+    "imageUrls": ["Kakotkin_com_02092022_0153_DxO.png", "Kakotkin_com_02092022_0154_DxO.png", "Kakotkin_com_02092022_0128_DxO.png"],
+    "description": "lep200sbkl",
+    "designations": [
+      "FFP3",
+      "NR",
+      "D",
+      "R",
+      "С клапаном для дыхания",
+      "До 50 ПДК",
+      "ЛЕПЕСТОК"
+    ],
+    "standard": "ТУ 32.99.11-028-08625805-2018\nГОСТ 12.4.294-2015\nТР ТС 019/2011"
+  },
+
+  {
+    "name": "«Лепесток–40Е»",
+    "imageUrls": ["Kakotkin_com_02092022_0141_DxO.png", "Kakotkin_com_02092022_0142_DxO.png", "shb200E.png"],
+    "description": "lep40ee",
+    "designations": [
+      "FFP2",
+      "До 12 ПДК",
+      "E",
+      "ЛЕПЕСТОК"
+    ],
+    "standard": "ТУ 32.99.11-013-08625805-2012\nГОСТ 12.4.028-76, ГОСТ 12.4.294-2015\nТР ТС 019/2011"
+  },
+  {
+    "name": "«Лепесток–200Е»",
+    "imageUrls": ["Kakotkin_com_02092022_0141_DxO.png", "Kakotkin_com_02092022_0142_DxO.png", "shb200E.png"],
+    "description": "lep200e",
+    "designations": [
+      "FFP3",
+      "До 50 ПДК",
+      "E",
+      "ЛЕПЕСТОК"
+    ],
+    "standard": "ТУ 32.99.11-013-08625805-2012\nГОСТ 12.4.028-76, ГОСТ 12.4.294-2015\nТР ТС 019/2011"
+  },
+  {
+    "name": "«Лепесток–40А СБ»",
+    "imageUrls": ["Kakotkin_com_02092022_0148_DxO.png", "Kakotkin_com_02092022_0147_DxO.png"],
+    "description": "lep200asb",
+    "designations": [
+      "FFP2",
+      "A",
+      "До 12 ПДК",
+      "ЛЕПЕСТОК"
+    ],
+    "standard": "ТУ 32.99.11-013-08625805-2019\nГОСТ 12.4.294-2015\nТР ТС 019/2011"
+  },
+  {
+    "name": "«Лепесток–40Е СБ»",
+    "imageUrls": ["Kakotkin_com_02092022_0148_DxO.png", "Kakotkin_com_02092022_0147_DxO.png"],
+    "description": "lep200esb",
+    "designations": [
+      "FFP2",
+      "E",
+      "До 12 ПДК",
+      "ЛЕПЕСТОК"
+    ],
+    "standard": "ТУ 32.99.11-013-08625805-2019\nГОСТ 12.4.294-2015\nТР ТС 019/2011"
+  },
+  {
+    "name": "«Лепесток–40АЕ СБ»",
+    "imageUrls": ["Kakotkin_com_02092022_0148_DxO.png", "Kakotkin_com_02092022_0147_DxO.png"],
+    "description": "lep40aesb",
+    "designations": [
+      "FFP2",
+      "AE",
+      "До 12 ПДК",
+      "ЛЕПЕСТОК"
+    ],
+    "standard": "ТУ 2568-013-08625805-2012\nГОСТ 12.4.294-2015\nТР ТС 019/2011"
+  },
+  {
+    "name": "«Лепесток–40АВ СБ»",
+    "imageUrls": ["Kakotkin_com_02092022_0148_DxO.png", "Kakotkin_com_02092022_0147_DxO.png"],
+    "description": "lep40absb",
+    "designations": [
+      "FFP2",
+      "AB",
+      "До 12 ПДК",
+      "ЛЕПЕСТОК"
+    ],
+    "standard": "ТУ 2568-013-08625805-2012\nГОСТ 12.4.294-2015\nТР ТС 019/2011"
+  },
+  {
+    "name": "«Лепесток–40А СБ кл»",
+    "imageUrls": ["Kakotkin_com_02092022_0157_DxO.png", "Kakotkin_com_02092022_0158_DxO.png", "Kakotkin_com_02092022_0129_DxO.png"],
+    "description": "lep40asbkl",
+    "designations": [
+      "FFP2",
+      "A",
+      "До 12 ПДК",
+      "С клапаном для дыхания",
+      "ЛЕПЕСТОК"
+    ],
+    "standard": "ТУ 2568-013-08625805-2012\nГОСТ 12.4.294-2015\nТР ТС 019/2011"
+  },
+  {
+    "name": "«Лепесток–40E СБ кл»",
+    "imageUrls": ["Kakotkin_com_02092022_0157_DxO.png", "Kakotkin_com_02092022_0158_DxO.png", "Kakotkin_com_02092022_0129_DxO.png"],
+    "description": "lep40esbkl",
+    "designations": [
+      "FFP2",
+      "E",
+      "До 12 ПДК",
+      "С клапаном для дыхания",
+      "ЛЕПЕСТОК"
+    ],
+    "standard": "ТУ 32.99.11-013-08625805-2019\nГОСТ 12.4.294-2015\nТР ТС 019/2011"
+  },
+  {
+    "name": "«Лепесток–40АЕ СБ кл»",
+    "imageUrls": ["Kakotkin_com_02092022_0157_DxO.png", "Kakotkin_com_02092022_0158_DxO.png", "Kakotkin_com_02092022_0129_DxO.png"],
+    "description": "lep40aesbkl",
+    "designations": [
+      "FFP2",
+      "AE",
+      "До 12 ПДК",
+      "С клапаном для дыхания",
+      "ЛЕПЕСТОК"
+    ],
+    "standard": "ТУ 2568-013-08625805-2012\nГОСТ 12.4.294-2015\nТР ТС 019/2011"
+  },
+  {
+    "name": "«Лепесток–40AB СБ кл»",
+    "imageUrls": ["Kakotkin_com_02092022_0157_DxO.png", "Kakotkin_com_02092022_0158_DxO.png", "Kakotkin_com_02092022_0129_DxO.png"],
+    "description": "lep40absbkl",
+    "designations": [
+      "FFP2",
+      "AB",
+      "До 12 ПДК",
+      "С клапаном для дыхания",
+      "ЛЕПЕСТОК"
+    ],
+    "standard": "ТУ 2568-013-08625805-2012\nГОСТ 12.4.294-2015\nТР ТС 019/2011"
+  },
+  {
+    "name": "«Лепесток–200A СБ»",
+    "imageUrls": ["Kakotkin_com_02092022_0161_DxO.png", "Kakotkin_com_02092022_0162_DxO.png", "Kakotkin_com_02092022_0132_DxO.png"],
+    "description": "lep200asb2",
+    "designations": [
+      "FFP3",
+      "A",
+      "До 50 ПДК",
+      "ЛЕПЕСТОК"
+    ],
+    "standard": "ТУ 32.99.11-013-08625805-2019\nГОСТ 12.4.294-2015\nТР ТС 019/2011"
+  },
+  {
+    "name": "«Лепесток–200E СБ»",
+    "imageUrls": ["Kakotkin_com_02092022_0161_DxO.png", "Kakotkin_com_02092022_0162_DxO.png", "Kakotkin_com_02092022_0132_DxO.png"],
+    "description": "lep200esb2",
+    "designations": [
+      "FFP3",
+      "E",
+      "До 50 ПДК",
+      "ЛЕПЕСТОК"
+    ],
+    "standard": "ТУ 32.99.11-013-08625805-2019\nГОСТ 12.4.294-2015\nТР ТС 019/2011"
+  },
+  {
+    "name": "«Лепесток–200AE СБ»",
+    "imageUrls": ["Kakotkin_com_02092022_0161_DxO.png", "Kakotkin_com_02092022_0162_DxO.png", "Kakotkin_com_02092022_0132_DxO.png"],
+    "description": "lep200aesb",
+    "designations": [
+      "FFP3",
+      "AE",
+      "До 50 ПДК",
+      "ЛЕПЕСТОК"
+    ],
+    "standard": "ТУ 32.99.11-013-08625805-2019\nГОСТ 12.4.294-2015\nТР ТС 019/2011"
+  },
+  {
+    "name": "«Лепесток–200AB СБ»",
+    "imageUrls": ["Kakotkin_com_02092022_0161_DxO.png", "Kakotkin_com_02092022_0162_DxO.png", "Kakotkin_com_02092022_0132_DxO.png"],
+    "description": "lep200absb",
+    "designations": [
+      "FFP3",
+      "AB",
+      "До 50 ПДК",
+      "ЛЕПЕСТОК"
+    ],
+    "standard": "ТУ 32.99.11-013-08625805-2019\nГОСТ 12.4.294-2015\nТР ТС 019/2011"
+  },
+  {
+    "name": "«Лепесток–200A СБ кл»",
+    "imageUrls": ["Kakotkin_com_02092022_0167_DxO.png", "Kakotkin_com_02092022_0168_DxO.png", "Kakotkin_com_02092022_0136_DxO.png"],
+    "description": "lep200asbkl",
+    "designations": [
+      "FFP3",
+      "A",
+      "До 50 ПДК",
+      "С клапаном для дыхания",
+      "ЛЕПЕСТОК"
+    ],
+    "standard": "ТУ 2568-013-08625805-2012\nГОСТ 12.4.294-2015\nТР ТС 019/2011"
+  },
+  {
+    "name": "«Лепесток–200E СБ кл»",
+    "imageUrls": ["Kakotkin_com_02092022_0167_DxO.png", "Kakotkin_com_02092022_0168_DxO.png", "Kakotkin_com_02092022_0136_DxO.png"],
+    "description": "lep200esbkl",
+    "designations": [
+      "FFP3",
+      "E",
+      "До 50 ПДК",
+      "С клапаном для дыхания",
+      "ЛЕПЕСТОК"
+    ],
+    "standard": "ТУ 32.99.11-013-08625805-2019\nГОСТ 12.4.294-2015\nТР ТС 019/2011"
+  },
+  {
+    "name": "«Лепесток–200AE СБ кл»",
+    "imageUrls": ["Kakotkin_com_02092022_0167_DxO.png", "Kakotkin_com_02092022_0168_DxO.png", "Kakotkin_com_02092022_0136_DxO.png"],
+    "description": "lep200aesbkl",
+    "designations": [
+      "FFP3",
+      "AE",
+      "До 50 ПДК",
+      "С клапаном для дыхания",
+      "ЛЕПЕСТОК"
+    ],
+    "standard": "ТУ 32.99.11-013-08625805-2019\nГОСТ 12.4.294-2015\nТР ТС 019/2011"
+  },
+  {
+    "name": "«Лепесток–200AB СБ кл»",
+    "imageUrls": ["Kakotkin_com_02092022_0167_DxO.png", "Kakotkin_com_02092022_0168_DxO.png", "Kakotkin_com_02092022_0136_DxO.png"],
+    "description": "lep200absbkl",
+    "designations": [
+      "FFP3",
+      "AB",
+      "До 50 ПДК",
+      "С клапаном для дыхания",
+      "ЛЕПЕСТОК"
+    ],
+    "standard": "ТУ 32.99.11-013-08625805-2019\nГОСТ 12.4.294-2015\nТР ТС 019/2011"
+  },
+  {
+    "name": "«СПИРО–1021»",
+    "imageUrls": ["Kakotkin_com_27102022_0101_DxO.png", "Kakotkin_com_27102022_0102_DxO.png", "Kakotkin_com_27102022_0000_DxO_raw.png"],
+    "description": "spir1021",
+    "designations": [
+      "NR",
+      "D",
+      "FFP2",
+      "До 12 ПДК",
+      "СПИРО"
+    ],
+    "standard": "ТУ 32.99.11-035-08625805-2021\nГОСТ 12.4.294-2015\nТР ТС 019/2011"
+  },
+  {
+    "name": "«СПИРО–1031»",
+    "imageUrls": ["Kakotkin_com_27102022_0101_DxO.png", "Kakotkin_com_27102022_0102_DxO.png", "Kakotkin_com_27102022_0000_DxO_raw.png"],
+    "description": "spir1031",
+    "designations": [
+      "NR",
+      "D",
+      "FFP3",
+      "До 50 ПДК",
+      "СПИРО"
+    ],
+    "standard": "ТУ 32.99.11-035-08625805-2021\nГОСТ 12.4.294-2015\nТР ТС 019/2011"
+  },
+  {
+    "name": "«СПИРО–101»",
+    "imageUrls": ["Kakotkin_com_27102022_0125_DxO.png", "Kakotkin_com_27102022_0126_DxO.png", "Kakotkin_com_27102022_0078_DxO.png"],
+    "description": "spir101",
+    "designations": [
+      "FFP1",
+      "До 4 ПДК",
+      "NR",
+      "D",
+      "СПИРО"
+    ],
+    "standard": "ТУ 9398-011-08625805-2011\nГОСТ 12.4.294-2015"
+  },
+  {
+    "name": "«СПИРО–111»",
+    "imageUrls": ["Kakotkin_com_27102022_0134_DxO.png", "Kakotkin_com_27102022_0135_DxO.png", "Kakotkin_com_27102022_0018_DxO.png"],
+    "description": "spir111",
+    "designations": [
+      "FFP1",
+      "NR",
+      "D",
+      "До 4 ПДК",
+      "С клапаном для дыхания",
+      "СПИРО"
+    ],
+    "standard": "ТУ 9398-011-08625805-2011\nГОСТ 12.4.294-2015"
+  },
+  {
+    "name": "«СПИРО–102»",
+    "imageUrls": ["Kakotkin_com_27102022_0129_DxO.png", "Kakotkin_com_27102022_0128_DxO.png", "Kakotkin_com_27102022_0078_DxO.png"],
+    "description": "spir102",
+    "designations": [
+      "FFP2",
+      "NR",
+      "D",
+      "До 12 ПДК",
+      "СПИРО"
+    ],
+    "standard": "ТУ 9398-011-08625805-2011\nГОСТ 12.4.294-2015"
+  },
+  {
+    "name": "«СПИРО–112»",
+    "imageUrls": ["Kakotkin_com_27102022_0138_DxO.png", "Kakotkin_com_27102022_0137_DxO.png", "Kakotkin_com_27102022_0020_DxO.png"],
+    "description": "spir112",
+    "designations": [
+      "FFP2",
+      "NR",
+      "D",
+      "До 12 ПДК",
+      "С клапаном для дыхания",
+      "СПИРО"
+    ],
+    "standard": "ТУ 9398-011-08625805-2011\nГОСТ 12.4.294-2015"
+  },
+  {
+    "name": "«СПИРО–103»",
+    "imageUrls": ["Kakotkin_com_27102022_0131_DxO.png", "Kakotkin_com_27102022_0132_DxO.png", "Kakotkin_com_27102022_0078_DxO.png"],
+    "description": "spir103",
+    "designations": [
+      "FFP3",
+      "NR",
+      "D",
+      "До 50 ПДК",
+      "СПИРО"
+    ],
+    "standard": "ТУ 9398-011-08625805-2011\nГОСТ 12.4.294-2015"
+  },
+  {
+    "name": "«СПИРО–113»",
+    "imageUrls": ["Kakotkin_com_27102022_0140_DxO.png", "Kakotkin_com_27102022_0141_DxO.png", "Kakotkin_com_27102022_0022_DxO.png"],
+    "description": "spir113",
+    "designations": [
+      "FFP3",
+      "NR",
+      "D",
+      "До 50 ПДК",
+      "С клапаном для дыхания",
+      "СПИРО"
+    ],
+    "standard": "ТУ 9398-011-08625805-2011\nГОСТ 12.4.294-2015"
+  },
+  {
+    "name": "«СПИРО–201»",
+    "imageUrls": ["Kakotkin_com_27102022_0143_DxO.png", "Kakotkin_com_27102022_0144_DxO.png", "Kakotkin_com_27102022_0025_DxO.png"],
+    "description": "spir201",
+    "designations": [
+      "FFP1",
+      "До 4 ПДК",
+      "NR",
+      "D",
+      "СПИРО"
+    ],
+    "standard": "ТУ 9398-011-08625805-2011\nГОСТ 12.4.294-2015"
+  },
+  {
+    "name": "«СПИРО–211»",
+    "imageUrls": ["Kakotkin_com_27102022_0152_DxO.png", "Kakotkin_com_27102022_0144_DxO.png", "Kakotkin_com_27102022_0029_DxO.png"],
+    "description": "spir211",
+    "designations": [
+      "FFP1",
+      "До 4 ПДК",
+      "NR",
+      "D",
+      "С клапаном для дыхания",
+      "СПИРО"
+    ],
+    "standard": "ТУ 9398-011-08625805-2011\nГОСТ 12.4.294-2015"
+  },
+  {
+    "name": "«СПИРО–202»",
+    "imageUrls": ["Kakotkin_com_27102022_0143_DxO.png", "Kakotkin_com_27102022_0147_DxO.png", "Kakotkin_com_27102022_0025_DxO.png"],
+    "description": "spir202",
+    "designations": [
+      "FFP2",
+      "NR",
+      "D",
+      "До 12 ПДК",
+      "СПИРО"
+    ],
+    "standard": "ТУ 9398-011-08625805-2011\nГОСТ 12.4.294-2015"
+  },
+  {
+    "name": "«СПИРО–212»",
+    "imageUrls": ["Kakotkin_com_27102022_0155_DxO.png", "Kakotkin_com_27102022_0147_DxO.png", "Kakotkin_com_27102022_0030_DxO.png"],
+    "description": "spir212",
+    "designations": [
+      "FFP2",
+      "NR",
+      "D",
+      "До 12 ПДК",
+      "С клапаном для дыхания",
+      "СПИРО"
+    ],
+    "standard": "ТУ 9398-011-08625805-2011\nГОСТ 12.4.294-2015"
+  },
+
+  {
+    "name": "«СПИРО–203»",
+    "imageUrls": ["Kakotkin_com_27102022_0143_DxO.png", "Kakotkin_com_27102022_0162_DxO.png", "Kakotkin_com_27102022_0025_DxO.png"],
+    "description": "spir203",
+    "designations": [
+      "FFP3",
+      "NR",
+      "D",
+      "До 50 ПДК",
+      "СПИРО"
+    ],
+    "standard": "ТУ 9398-011-08625805-2011\nГОСТ 12.4.294-2015"
+  },
+  {
+    "name": "«СПИРО–213»",
+    "imageUrls": ["Kakotkin_com_27102022_0161_DxO.png", "Kakotkin_com_27102022_0162_DxO.png", "Kakotkin_com_27102022_0033_DxO.png"],
+    "description": "spir213",
+    "designations": [
+      "FFP3",
+      "NR",
+      "D",
+      "До 50 ПДК",
+      "С клапаном для дыхания",
+      "СПИРО"
+    ],
+    "standard": "ТУ 32.99.11-008-08625805-2018\nГОСТ 12.4.294-2015\nТР ТС 019/2011  "
+  },
+  {
+    "name": "«СПИРО–401»",
+    "imageUrls": ["Kakotkin_com_27102022_0110_DxO.png", "Kakotkin_com_27102022_0111_DxO.png", "Kakotkin_com_27102022_0010_DxO.png"],
+    "description": "spir401",
+    "designations": [
+      "FFP1",
+      "NR",
+      "D",
+      "До 4 ПДК",
+      "СПИРО"
+    ],
+    "standard": "ТУ 32.99.11-014-08625805-2012\nГОСТ 12.4.294-2015\nТР ТС 019/2011"
+  },
+  {
+    "name": "«СПИРО–411»",
+    "imageUrls": ["Kakotkin_com_27102022_0116_DxO.png", "Kakotkin_com_27102022_0117_DxO.png", "Kakotkin_com_27102022_0011_DxO.png"],
+    "description": "spir411",
+    "designations": [
+      "FFP1",
+      "NR",
+      "D",
+      "До 4 ПДК",
+      "С клапаном для дыхания",
+      "СПИРО"
+    ],
+    "standard": "ТУ 32.99.11-014-08625805-2012\nГОСТ 12.4.294-2015\nТР ТС 019/2011"
+  },
+  {
+    "name": "«СПИРО–402»",
+    "imageUrls": ["Kakotkin_com_27102022_0110_DxO.png", "Kakotkin_com_27102022_0111_DxO.png", "Kakotkin_com_27102022_0010_DxO.png"],
+    "description": "spir402",
+    "designations": [
+      "FFP2",
+      "NR",
+      "D",
+      "До 12 ПДК",
+      "СПИРО"
+    ],
+    "standard": "ТУ 32.99.11-014-08625805-2012\nГОСТ 12.4.294-2015\nТР ТС 019/2011"
+  },
+  {
+    "name": "«СПИРО–412»",
+    "imageUrls": ["Kakotkin_com_27102022_0119_DxO.png", "Kakotkin_com_27102022_0120_DxO.png", "Kakotkin_com_27102022_0012_DxO.png"],
+    "description": "spir412",
+    "designations": [
+      "FFP2",
+      "NR",
+      "D",
+      "До 12 ПДК",
+      "С клапаном для дыхания",
+      "СПИРО"
+    ],
+    "standard": "ТУ 32.99.11-014-08625805-2012\nГОСТ 12.4.294-2015\nТР ТС 019/2011 "
+  },
+  {
+    "name": "«СПИРО–403»",
+    "imageUrls": ["Kakotkin_com_27102022_0110_DxO.png", "Kakotkin_com_27102022_0111_DxO.png", "Kakotkin_com_27102022_0010_DxO.png"],
+    "description": "spir403",
+    "designations": [
+      "FFP3",
+      "NR",
+      "D",
+      "До 50 ПДК",
+      "СПИРО"
+    ],
+    "standard": "ТУ 2568-014-08625805-2012\nГОСТ 12.4.294-2015\nТР ТС 019/2011"
+  },
+  {
+    "name": "«СПИРО–413»",
+    "imageUrls": ["Kakotkin_com_27102022_0122_DxO.png", "Kakotkin_com_27102022_0123_DxO.png", "Kakotkin_com_27102022_0013_DxO.png"],
+    "description": "spir413",
+    "designations": [
+      "FFP3",
+      "NR",
+      "D",
+      "До 50 ПДК",
+      "С клапаном для дыхания",
+      "СПИРО"
+    ],
+    "standard": "ТУ 2568-014-08625805-2012\nГОСТ 12.4.294-2015\nТР ТС 019/2011"
+  },
+  {
+    "name": "«СПИРО–3011»",
+    "imageUrls": ["Kakotkin_com_27102022_0166_DxO.png", "Kakotkin_com_27102022_0167_DxO.png", "Kakotkin_com_27102022_0034_DxO.png", "Kakotkin_com_27102022_0035_DxO.png"],
+    "description": "spir3011",
+    "designations": [
+      "FFP1",
+      "NR",
+      "D",
+      "До 12 ПДК",
+      "СПИРО"
+    ],
+    "standard": "ТУ 2568-017-08625805-2016\nГОСТ 12.4.294-2015\nТР ТС 019/2011"
+  },
+  {
+    "name": "«СПИРО–3111»",
+    "imageUrls": ["Kakotkin_com_27102022_0172_DxO.png", "Kakotkin_com_27102022_0173_DxO.png", "Kakotkin_com_27102022_0038_DxO.png", "Kakotkin_com_27102022_0039_DxO.png"],
+    "description": "spir3111",
+    "designations": [
+      "FFP1",
+      "NR",
+      "D",
+      "До 12 ПДК",
+      "С клапаном для дыхания",
+      "СПИРО"
+    ],
+    "standard": "ТУ 2568-017-08625805-2016\nГОСТ 12.4.294-2015\nТР ТС 019/2011"
+  },
+  {
+    "name": "«СПИРО–3021»",
+    "imageUrls": ["Kakotkin_com_27102022_0169_DxO.png", "Kakotkin_com_27102022_0170_DxO.png", "Kakotkin_com_27102022_0036_DxO.png", "Kakotkin_com_27102022_0037_DxO.png"],
+    "description": "spir3021",
+    "designations": [
+      "FFP2",
+      "NR",
+      "D",
+      "До 12 ПДК",
+      "СПИРО"
+    ],
+    "standard": "ТУ 2568-017-08625805-2016\nГОСТ 12.4.294-2015\nТР ТС 019/2011"
+  },
+  {
+    "name": "«СПИРО–3121»",
+    "imageUrls": ["Kakotkin_com_27102022_0175_DxO.png", "Kakotkin_com_27102022_0176_DxO.png", "Kakotkin_com_27102022_0040_DxO.png", "Kakotkin_com_27102022_0041_DxO.png"],
+    "description": "spir3121",
+    "designations": [
+      "FFP2",
+      "NR",
+      "D",
+      "До 12 ПДК",
+      "С клапаном для дыхания",
+      "СПИРО"
+    ],
+    "standard": "ТУ 2568-017-08625805-2016\nГОСТ 12.4.294-2015\nТР ТС 019/2011"
+  },
+  {
+    "name": "«СПИРО–3131»",
+    "imageUrls": ["Kakotkin_com_27102022_0178_DxO.png", "Kakotkin_com_27102022_0179_DxO.png", "Kakotkin_com_27102022_0042_DxO.png", "Kakotkin_com_27102022_0043_DxO.png"],
+    "description": "spir3131",
+    "designations": [
+      "FFP3",
+      "NR",
+      "D",
+      "До 50 ПДК",
+      "С клапаном для дыхания",
+      "СПИРО"
+    ],
+    "standard": "ТУ 2568-017-08625805-2016\nГОСТ 12.4.294-2015\nТР ТС 019/2011"
+  },
+  {
+    "name": "«СПИРО–301 Э»",
+    "imageUrls": ["Kakotkin_com_27102022_0187_DxO.png", "Kakotkin_com_27102022_0188_DxO.png", "Kakotkin_com_27102022_0044_DxO.png"],
+    "description": "spir301e",
+    "designations": [
+      "FFP1",
+      "NR",
+      "D",
+      "До 4 ПДК",
+      "СПИРО"
+    ],
+    "standard": "ТУ 32.99.11-009-08625805-2018\nГОСТ 12.4.294-2015\nТР ТС 019/2011 "
+  },
+
+  {
+    "name": "«СПИРО–311 Э»",
+    "imageUrls": ["Kakotkin_com_27102022_0190_DxO.png", "Kakotkin_com_27102022_0191_DxO.png", "Kakotkin_com_27102022_0050_DxO.png"],
+    "description": "spir311e",
+    "designations": [
+      "FFP1",
+      "До 4 ПДК",
+      "NR",
+      "D",
+      "С клапаном для дыхания",
+      "СПИРО"
+    ],
+    "standard": "ТУ 32.99.11-009-08625805-2018\nГОСТ 12.4.294-2015\nТР ТС 019/2011"
+  },
+  {
+    "name": "«СПИРО–302 Э»",
+    "imageUrls": ["Kakotkin_com_27102022_0187_DxO.png", "Kakotkin_com_27102022_0188_DxO.png", "Kakotkin_com_27102022_0046_DxO.png"],
+    "description": "spir302e",
+    "designations": [
+      "FFP2",
+      "До 12 ПДК",
+      "NR",
+      "D",
+      "СПИРО"
+    ],
+    "standard": "ТУ 32.99.11-009-08625805-2018\nГОСТ 12.4.294-2015\nТР ТС 019/2011 "
+  },
+
+  {
+    "name": "«СПИРО–312 Э»",
+    "imageUrls": ["Kakotkin_com_27102022_0193_DxO.png", "Kakotkin_com_27102022_0194_DxO.png", "Kakotkin_com_27102022_0052_DxO.png"],
+    "description": "spir312e",
+    "designations": [
+      "FFP2",
+      "До 12 ПДК",
+      "NR",
+      "D",
+      "С клапаном для дыхания",
+      "СПИРО"
+    ],
+    "standard": "ТУ 32.99.11-009-08625805-2018\nГОСТ 12.4.294-2015\nТР ТС 019/2011"
+  },
+
+
+  {
+    "name": "«СПИРО–303 Э»",
+    "imageUrls": ["Kakotkin_com_27102022_0187_DxO.png", "Kakotkin_com_27102022_0188_DxO.png", "Kakotkin_com_27102022_0048_DxO.png"],
+    "description": "spir303e",
+    "designations": [
+      "FFP3",
+      "До 50 ПДК",
+      "NR",
+      "D",
+      "R",
+      "СПИРО"
+    ],
+    "standard": "ТУ 32.99.11-009-08625805-2018\nГОСТ 12.4.294-2015\nТР ТС 019/2011"
+  },
+
+  {
+    "name": "«СПИРО–313 Э»",
+    "imageUrls": ["Kakotkin_com_27102022_0196_DxO.png", "Kakotkin_com_27102022_0197_DxO.png", "Kakotkin_com_27102022_0005_DxO.png"],
+    "description": "spir313e",
+    "designations": [
+      "FFP3",
+      "До 50 ПДК",
+      "NR",
+      "D",
+      "R",
+      "С клапаном для дыхания",
+      "СПИРО"
+    ],
+    "standard": "ТУ 32.99.11-009-08625805-2018\nГОСТ 12.4.294-2015\nТР ТС 019/2011"
+  },
+  {
+    "name": "«СПИРО–311 Ε»",
+    "imageUrls": ["Kakotkin_com_27102022_0214_DxO.png", "Kakotkin_com_27102022_0215_DxO.png", "Kakotkin_com_27102022_0056_DxO.png", "Kakotkin_com_27102022_0057_DxO.png"],
+    "description": "spir311ee",
+    "designations": [
+      "FFP1", "E",
+      "NR",
+      "D",
+      "R",
+      "С клапаном для дыхания",
+      "До 4 ПДК",
+      "СПИРО"
+    ],
+    "standard": "ТУ 2568-012-08625805-2012\nГОСТ 12.4.294-2015\nТР ТС 019/2011"
+  },
+  {
+    "name": "«СПИРО–312 Ε»",
+    "imageUrls": ["Kakotkin_com_27102022_0208_DxO.png", "Kakotkin_com_27102022_0224_DxO.png", "Kakotkin_com_27102022_0224_DxO.png", "Kakotkin_com_27102022_0223_DxO.png", "Kakotkin_com_27102022_0223_DxO.png", "Kakotkin_com_27102022_0209_DxO.png", "Kakotkin_com_27102022_0062_DxO.png", "Kakotkin_com_27102022_0063_DxO.png"],
+    "description": "spir312ee",
+    "designations": [
+      "FFP2", "E",
+      "NR",
+      "D",
+      "R",
+      "С клапаном для дыхания",
+      "До 12 ПДК",
+      "СПИРО"
+    ],
+    "standard": "ТУ 2568-012-08625805-2012\nГОСТ 12.4.294-2015\nТР ТС 019/2011"
+  },
+  {
+    "name": "«СПИРО–313 Ε»",
+    "imageUrls": ["Kakotkin_com_27102022_0220_DxO.png", "Kakotkin_com_27102022_0221_DxO.png", "Kakotkin_com_27102022_0060_DxO.png", "Kakotkin_com_27102022_0061_DxO.png"],
+    "description": "spir313ee",
+    "designations": [
+      "FFP3", "E",
+      "NR",
+      "D",
+      "R",
+      "С клапаном для дыхания",
+      "До 50 ПДК",
+      "СПИРО"
+    ],
+    "standard": "ТУ 2568-012-08625805-2012\nГОСТ 12.4.294-2015\nТР ТС 019/2011"
+  },
+
+  {
+    "name": "«СПИРО–311 А»",
+    "imageUrls": ["Kakotkin_com_27102022_0214_DxO.png", "Kakotkin_com_27102022_0215_DxO.png", "Kakotkin_com_27102022_0056_DxO.png", "Kakotkin_com_27102022_0057_DxO.png"],
+    "description": "spir311a",
+    "designations": [
+      "FFP1", "A",
+      "NR",
+      "D",
+      "R",
+      "С клапаном для дыхания",
+      "До 4 ПДК",
+      "СПИРО"
+    ],
+    "standard": "ТУ 2568-012-08625805-2012\nГОСТ 12.4.294-2015\nТР ТС 019/2011"
+  },
+  {
+    "name": "«СПИРО–312 А»",
+    "imageUrls": ["Kakotkin_com_27102022_0217_DxO.png", "Kakotkin_com_27102022_0218_DxO.png", "Kakotkin_com_27102022_0059_DxO.png", "Kakotkin_com_27102022_0058_DxO.png"],
+    "description": "spir312a",
+    "designations": [
+      "FFP2", "A",
+      "NR",
+      "D",
+      "R",
+      "С клапаном для дыхания",
+      "До 12 ПДК",
+      "СПИРО"
+    ],
+    "standard": "ТУ 2568-012-08625805-2012\nГОСТ 12.4.294-2015\nТР ТС 019/2011"
+  },
+  {
+    "name": "«СПИРО–312 ΑΕ»",
+    "imageUrls": ["Kakotkin_com_27102022_0217_DxO.png", "Kakotkin_com_27102022_0218_DxO.png", "Kakotkin_com_27102022_0059_DxO.png", "Kakotkin_com_27102022_0058_DxO.png"],
+    "description": "spir312ae",
+    "designations": [
+      "FFP2", "AE",
+      "NR",
+      "D",
+      "R",
+      "С клапаном для дыхания",
+      "До 12 ПДК",
+      "СПИРО"
+    ],
+    "standard": "ТУ 2568-012-08625805-2012\nГОСТ 12.4.294-2015\nТР ТС 019/2011"
+  },
+  {
+    "name": "«СПИРО–312 АВ»",
+    "imageUrls": ["Kakotkin_com_27102022_0217_DxO.png", "Kakotkin_com_27102022_0218_DxO.png", "Kakotkin_com_27102022_0059_DxO.png", "Kakotkin_com_27102022_0058_DxO.png"],
+    "description": "spir312ab",
+    "designations": [
+      "FFP2", "AE",
+      "NR",
+      "D",
+      "R",
+      "С клапаном для дыхания",
+      "До 12 ПДК",
+      "СПИРО"
+    ],
+    "standard": "ТУ 32.99.11-027-08625805-2018\nГОСТ 12.4.294-2015\nТР ТС 019/2011"
+  },
+  {
+    "name": "«СПИРО–313 А»",
+    "imageUrls": ["Kakotkin_com_27102022_0205_DxO.png", "Kakotkin_com_27102022_0206_DxO.png", "Kakotkin_com_27102022_0076_DxO.png", "Kakotkin_com_27102022_0077_DxO.png"],
+    "description": "spir313a",
+    "designations": [
+      "FFP3", "A",
+      "NR",
+      "D",
+      "R",
+      "С клапаном для дыхания",
+      "До 50 ПДК",
+      "СПИРО"
+    ],
+    "standard": "ТУ 2568-012-08625805-2012\nГОСТ 12.4.294-2015\nТР ТС 019/2011"
+  },
+
+
+  {
+    "name": "«СПИРО–313 ΑΕ»",
+    "imageUrls": ["Kakotkin_com_27102022_0205_DxO.png", "Kakotkin_com_27102022_0206_DxO.png", "Kakotkin_com_27102022_0076_DxO.png", "Kakotkin_com_27102022_0077_DxO.png"],
+    "description": "spir313ae",
+    "designations": [
+      "FFP3", "AE",
+      "NR",
+      "D",
+      "R",
+      "С клапаном для дыхания",
+      "До 50 ПДК",
+      "СПИРО"
+    ],
+    "standard": "ТУ 2568-012-08625805-2012\nГОСТ 12.4.294-2015\nТР ТС 019/2011"
+  },
+
+  {
+    "name": "«СПИРО–313 АВ»",
+    "imageUrls": ["Kakotkin_com_27102022_0234_DxO.png", "Kakotkin_com_27102022_0232_DxO.png", "Kakotkin_com_27102022_0060_DxO.png", "Kakotkin_com_27102022_0076_DxO.png"],
+    "description": "spir313ab",
+    "designations": [
+      "FFP3", "AE",
+      "NR",
+      "D",
+      "R",
+      "С клапаном для дыхания",
+      "До 50 ПДК",
+      "СПИРО"
+    ],
+    "standard": "ТУ 2568-012-08625805-2012\nГОСТ 12.4.294-2015\nТР ТС 019/2011"
+  },
+
+  {
+    "name": "«СПИРО–УНИВЕРСАЛ»",
+    "imageUrls": ["Spiroun2.png", "Spiroun1.png"],
+    "description": "spirun",
+    "designations": ["СПИРО", "Одежда"],
+    "standard": "ТУ 14.12.30-007-08625805-2017\nТР TC 019/2011\nГОСТ Р ИСО 16602-2010"
+  },
+  {
+    "name": "Комбинезон «СПИРО–УНИВЕРСАЛ»",
+    "imageUrls": ["Spiroun1.png", "Spiroun2.png"],
+    "description": "spirunkomb",
+    "designations": ["Одежда","СПИРО"],
+    "standard": " ТР ТС 019/2011\n  ГОСТ 12.4.217–2001 и ГОСТ 12.4.243–2013"
+  },
+
+  {
+    "name": "Полукомбинезон-ГШ;-СЛ",
+    "imageUrls": ["polkomb.png"],
+    "description": "polkombrad",
+    "designations": ["Одежда","СПИРО"],
+    "standard": ""
+  },
+
+  {
+    "name": "Фартук-ГШ;-СЛ",
+    "imageUrls": ["fart1.png", "fart2.png"],
+    "description": "fartgsh",
+    "designations": ["Одежда","СПИРО"],
+    "standard": ""
+  },
+
+
+  {
+    "name": "Нарукавники",
+    "imageUrls": ["naruk.png"],
+    "description": "narukgsh",
+    "designations": ["Одежда","СПИРО"],
+    "standard": ""
+  },
+  {
+    "name": "Куртка",
+    "imageUrls": ["kurtk.png", "kurtk2.png"],
+    "description": "kurtkgsh",
+    "designations": ["Одежда","СПИРО"],
+    "standard": ""
+  },
+
+  {
+    "name": "Брюки",
+    "imageUrls": ["kurtk.png", "kurtk2.png"],
+    "description": "brukgsh",
+    "designations": ["Одежда","СПИРО"],
+    "standard": ""
+  },
+  {
+    "name": "Шапочка-СЛ",
+    "imageUrls": ["shap.png"],
+    "description": "shap",
+    "designations": ["Одежда","СПИРО"],
+    "standard": ""
+  },
+  {
+    "name": "Бандана",
+    "imageUrls": ["band.png"],
+    "description": "band",
+    "designations": ["Одежда","СПИРО"],
+    "standard": ""
+  },
+  {
+    "name": "Полукомбинезон пластикатовый",
+    "imageUrls": ["poluxalat.png"],
+    "description": "polkombpl",
+    "designations": ["Одежда",
+      "Дезактивиуемый"
+    ],
+    "standard": ""
+  },
+
+
+  {
+    "name": "Полухалат пластикатовый",
+    "imageUrls": ["polukombez.png"],
+    "description": "poluxalatpl",
+    "designations": ["Дезактивиуемый","Одежда"],
+    "standard": ""
+  },
+  {
+    "name": "Фартук пластикатовый",
+    "imageUrls": ["fart.png"],
+    "description": "fartpl",
+    "designations": ["Дезактивиуемый","Одежда"],
+    "standard": ""
+  },
+  {
+    "name": "Нарукавники пластикатовые",
+    "imageUrls": ["naruk.png"],
+    "description": "narukpl",
+    "designations": ["Дезактивиуемый","Одежда"],
+    "standard": ""
+  },
+  {
+    "name": "Чехлы на обвуь",
+    "imageUrls": ["Checl2.png"],
+    "description": "checl2",
+    "designations": ["СПИРО","Одежда"],
+    "standard": ""
+  },
+  {
+    "name": "Следы",
+    "imageUrls": ["sled.png"],
+    "description": "sled",
+    "designations": ["Дезактивиуемый","Одежда"],
+    "standard": ""
+  },
+  {
+    "name": "Чехлы на обвуь пластиковые",
+    "imageUrls": ["CheclH.png"],
+    "description": "checlpl",
+    "designations": ["Дезактивиуемый","Одежда"],
+    "standard": ""
+  },
+  {
+    "name": "Бахилы пластиковые",
+    "imageUrls": ["baxl.png"],
+    "description": "baxlpl",
+    "designations": ["Дезактивиуемый","Одежда"],
+    "standard": ""
+  },
+  {
+    "name": "Чулки пластиковые",
+    "imageUrls": ["chulk.png"],
+    "description": "chulkpl",
+    "designations": ["Дезактивиуемый","Одежда"],
+    "standard": ""
   },
   {
     "name": "Пневмокостюм типа ЛГ",
-    "imageUrls": ["assets/images/Lg.jpg"],
-    "description": "Предназначенные для защиты от контактного загрязнения радиоактивными веществами, а так же от воздействия кислот и щелочей средней концентрации при выполнении ремонтных, аварийных и дезактивационных работ в условиях высокой загрязненности воздуха, оборудования и рабочих помещений радиоактивными веществами, в том числе на объектах использования атомной энергии. Спереди комбинезона имеется лаз для входа в костюм и выхода из него. Конструкция пневмокостюмов позволяет работающему самостоятельно надевать/ снимать данное изделие.",
-    "designations": ["Дезактивиуемый"],
-    "standard": "ТР ТС 019/201 ГОСТ 12.4.217-2001, ГОСТ 12.4.240-2013, ГОСТ 12.4.248-2013"
-  },
-  {
-    "name": "Комбинезон шланговый",
-    "imageUrls": ["assets/images/Lg.jpg"],
-    "description": "Комбинированные шланговые изолирующие используются при выполнении ремонтных, аварийных и дезактивационных работ в условиях высокой загрязненности воздуха, оборудования и поверхностей рабочих помещений. Надеваются поверх спецодежды. Благодаря применяемым конструктивным решениям, происходит вентиляция всего внутреннего пространства, после чего воздух выходит в окружающую среду.",
-    "designations": ["Дезактивиуемый"],
-    "standard": "ТР ТС 019/201 ГОСТ 12.4.217-2001, ГОСТ 12.4.240-2013, ГОСТ 12.4.248-2013"
-  },
-  {
-    "name": "Бахилы-Н",
-    "imageUrls": ["assets/images/CheclH.jpg"],
-    "description": "Высота до 50 см, закрывают ногу до колена. Две плёночные завязки: одну в области лодыжки, вторую – в области икроножной мышцы для крепления голенища к ноге . Две противоскользящие вставки синего цвета с особым тиснением для защиты от скольжения по любой поверхности.",
-    "designations": ["Дезактивиуемый"],
-    "standard": " ТР ТС 019/2011\n ГОСТ 12.4.217-2001 и ГОСТ 12.4.242-2013"
-  },
-  {
-    "name": "Чехлы для обуви",
-    "imageUrls": ["assets/images/Checl1.jpg","assets/images/Checl2.jpg"],
-    "description": "Легкие мягкие чехлы высотой 20 см. Верх чехлов из плёнки Рз. Подошва толщиной 3 мм из плёнки Рз две пластикатовые противоскользящие вставки синего цвета с особым тиснением, обеспечивающим защиту от скольжения по любой поверхности. В верхний край голенища вставлена эластичная тесьма для облегания ноги. Применяются при выполнении продолжительных работ на участках со значительным загрязнением поверхности. Высота чехла 20 см. Подошва имеет рифление. Верхний край голенища стягивается эластичной тесьмой.",
-    "designations": ["Разное"],
+    "imageUrls": ["lg1.png", "lg2.png"],
+    "description": "lg",
+    "designations": ["Дезактивиуемый","Одежда"],
     "standard": ""
+  },
+  {
+    "name": "Пневмокуртка ПК",
+    "imageUrls": ["pk.png"],
+    "description": "pk",
+    "designations": ["Дезактивиуемый","Одежда"],
+    "standard": ""
+  },
+  {
+    "name": "Пневмошлем ЛИЗ–4",
+    "imageUrls": ["liz1.png", "liz2.png"],
+    "description": "liz4",
+    "designations": ["Дезактивиуемый","Одежда"],
+    "standard": ""
+  },
+  {
+    "name": "Пневмошлем ЛИЗ–5",
+    "imageUrls": ["liz5.png"],
+    "description": "liz5",
+    "designations": ["Дезактивиуемый","Одежда"],
+    "standard": ""
+  },
+  {
+    "name": "Пакеты пластиковые",
+    "imageUrls": ["packet.png"],
+    "description": "packet",
+    "designations": ["Разное"],
+    "standard": "ТУ 951022-82"
+  },
+  {
+    "name": "Беруши",
+    "imageUrls": ["ber.png"],
+    "description": "ber",
+    "designations": ["Разное","Одежда"],
+    "standard": "ТУ 2568-003-08625805-05\nГОСТ Р 12.4.209-99"
+  },
+  {
+    "name": "Фильтры аналитические",
+    "imageUrls": ["afa1.png", "afa2.png"],
+    "description": "analit",
+    "designations": ["Разное"],
+    "standard": "ТУ 951892-89"
+  },
+  {
+    "name": "Фильтродержатели",
+    "imageUrls": ["ffl.png"],
+    "description": "derzh",
+    "designations": ["Разное"],
+    "standard": "ТУ 95-1021-82"
   }
 ]
+

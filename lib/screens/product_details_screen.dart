@@ -3,10 +3,32 @@ import 'package:fgsiz/data/product.dart';
 
 
 
-class ProductDetailsScreen extends StatelessWidget {
+class ProductDetailsScreen extends StatefulWidget {
   final Product product;
 
-  const ProductDetailsScreen({Key? key, required this.product}) : super(key: key);
+  const ProductDetailsScreen({super.key, required this.product});
+
+  @override
+  State<ProductDetailsScreen> createState() => _ProductDetailsScreenState();
+}
+
+class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
+  late PageController _pageController;
+  int _currentPage = 0;
+
+
+  @override
+  void initState() {
+    super.initState();
+    _pageController = PageController();
+  }
+
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -28,28 +50,69 @@ class ProductDetailsScreen extends StatelessWidget {
             children: [
               SizedBox(
                 height: 500,
-                child: PageView.builder(
-                  itemCount: product.imageUrls.length,
-                  itemBuilder: (context, index) {
-                    return Image.asset(
-                      product.imageUrls[index],
-                      fit: BoxFit.contain,
-                    );
-                  },
+                child: Stack(
+                  children: [
+                    PageView.builder(
+                      controller: _pageController,
+                      itemCount: widget.product.imageUrls.length, // Используем widget.product
+                      itemBuilder: (context, index) {
+                        return Image.asset(
+                          widget.product.imageUrls[index], // Используем widget.product
+                          fit: BoxFit.contain,
+                        );
+                      },
+                      onPageChanged: (index) {
+                        setState(() {
+                          _currentPage = index;
+                        });
+                      },
+                    ),
+                    if (widget.product.imageUrls.length > 1) // Отображаем стрелки, если есть несколько изображений
+                      Positioned.fill(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            IconButton(
+                              icon: const Icon(Icons.arrow_back_ios),
+                              onPressed: () {
+                                if (_pageController.page! > 0) {
+                                  _pageController.previousPage(
+                                    duration: const Duration(milliseconds: 300),
+                                    curve: Curves.ease,
+                                  );
+                                }
+                              },
+                            ),
+                            IconButton(
+                              icon: const Icon(Icons.arrow_forward_ios),
+                              onPressed: () {
+                                if (_pageController.page! < widget.product.imageUrls.length - 1) {
+                                  _pageController.nextPage(
+                                    duration: const Duration(milliseconds: 300),
+                                    curve: Curves.ease,
+                                  );
+                                }
+                              },
+                            ),
+                          ],
+                        ),
+                      ),
+
+                  ],
                 ),
               ),
               const SizedBox(height: 16.0),
               Text(
-                product.name,
+                widget.product.name,
                 style: const TextStyle(
-                  fontSize: 24.0,
-                  fontWeight: FontWeight.bold,
+                    fontFamily: 'Open Sans',
+                    fontWeight: FontWeight.w700,  fontSize: 24,
                 ),
               ),
               const SizedBox(height: 16.0),
               Text(
-                product.description,
-                style: const TextStyle(fontSize: 16.0),
+                widget.product.description,
+                style: const TextStyle(fontSize: 14,),
               ),
             ],
           ),

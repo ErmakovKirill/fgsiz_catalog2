@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
-  const SplashScreen({Key? key}) : super(key: key);
+  const SplashScreen({super.key});
 
   @override
   State<SplashScreen> createState() => _SplashScreenState();
@@ -35,12 +35,14 @@ class _SplashScreenState extends State<SplashScreen>
 
   void _navigateToNextScreen() {
     Future.delayed(const Duration(seconds: 3), () {
-      Navigator.pushReplacementNamed(context, '/home'); // Замените '/home' на маршрут главного экрана
+      Navigator.pushReplacementNamed(context, '/home');
     });
   }
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
       backgroundColor: Colors.blue,
       body: Center(
@@ -49,8 +51,8 @@ class _SplashScreenState extends State<SplashScreen>
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox( // Логотип компании
-                width: 400,
+              SizedBox(
+                width: screenWidth * 0.8, // 80% от ширины экрана
                 child: Image.asset(
                   'assets/images/main_logo.png',
                   fit: BoxFit.contain,
@@ -60,16 +62,16 @@ class _SplashScreenState extends State<SplashScreen>
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SizedBox( // Бренд 1
-                    width: 200, // Увеличиваем ширину бренда
+                  SizedBox(
+                    width: screenWidth * 0.35, // 35% от ширины экрана (для каждого бренда)
                     child: Image.asset(
                       'assets/images/brand1.png',
                       fit: BoxFit.contain,
                     ),
                   ),
                   const SizedBox(width: 20),
-                  SizedBox( // Бренд 2
-                    width: 200,
+                  SizedBox(
+                    width: screenWidth * 0.35, // 35% от ширины экрана
                     child: Image.asset(
                       'assets/images/brand2.png',
                       fit: BoxFit.contain,

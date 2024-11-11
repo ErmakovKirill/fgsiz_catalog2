@@ -1,4 +1,3 @@
-import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:fgsiz/data/products_data.dart';
 import 'package:image/image.dart' as img;
@@ -6,8 +5,7 @@ import 'package:fgsiz/data/product.dart';
 import 'package:fgsiz/screens/product_details_screen.dart';
 import 'package:fgsiz/screens/splash_screen.dart';
 import 'package:flutter/services.dart';
-//import 'package:url_launcher/url_launcher.dart';
-
+import 'package:flutter_image_compress/flutter_image_compress.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,7 +19,7 @@ Set<String> _getUniqueTags() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +30,6 @@ class MyApp extends StatelessWidget {
       ),
       home: const SplashScreen(),
       routes: {
-
         '/home': (context) => const MyHomePage(title: 'Каталог товаров'),
       },
     );
@@ -40,7 +37,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
+  const MyHomePage({super.key, required this.title});
 
   final String title;
 
@@ -50,8 +47,39 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   String _searchQuery = '';
-  List<String> _selectedTags = [];
+  final List<String> _selectedTags = [];
   String? _selectedFilter;
+
+  Future<Uint8List?> _compressImage(Uint8List imageData) async {
+    try {
+      final result = await FlutterImageCompress.compressWithList(
+        imageData,
+        minWidth: 200,
+        minHeight: 200,
+        quality: 60,
+        format: CompressFormat.jpeg,
+      );
+      return result;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  Future<bool> _isVerticalImage(String imageUrl) async {
+    final ByteData data = await rootBundle.load(imageUrl);
+    final Uint8List bytes = data.buffer.asUint8List();
+
+    final compressedBytes = await _compressImage(bytes);
+
+    if (compressedBytes == null) {
+      return false;
+    }
+
+    final image = img.decodeImage(compressedBytes);
+    if (image == null) return false;
+
+    return image.height > image.width;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -76,11 +104,11 @@ class _MyHomePageState extends State<MyHomePage> {
         children: [
           Padding(
             padding: const EdgeInsets.all(16.0),
-            child: SizedBox( // Добавлено SizedBox для управления высотой поиска
-              height: 48, // Устанавливаем высоту поиска
+            child: SizedBox(
+              height: 48,
               child: TextField(
                 onChanged: (value) {
-                  setState(() {
+                  setState(() { // Добавляем setState сюда
                     _searchQuery = value;
                   });
                 },
@@ -96,10 +124,10 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           Expanded(
             child: ListView.builder(
-              itemCount: filteredProducts.length,
+              itemCount: filteredProducts.length, // Используем отфильтрованный список
               itemBuilder: (context, index) {
-                final product = filteredProducts[index];
-                return _buildProductCard(product);
+                final product = filteredProducts[index]; // Берем продукт из отфильтрованного списка
+                return _buildProductCard(product);// И здесь
               },
             ),
           ),
@@ -107,61 +135,55 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       drawer: Drawer(
         backgroundColor: Colors.blue,
-        child: Column(
+        child: ListView(
           children: [
             const DrawerHeader(
               decoration: BoxDecoration(color: Colors.blue),
-              child: Text('Фильтры', style: TextStyle(color: Colors.white)),
+              child: Center( // Центрируем текст "Фильтры"
+                child: Text(
+                  'Фильтры',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
             ),
-            const Divider(),
+            const Divider(color: Colors.white),
+            Theme(
+              data: Theme.of(context).copyWith(
+                unselectedWidgetColor: Colors.white,
+              ),
+              child: ExpansionTile(
+                title: const Text('Теги', style: TextStyle(color: Colors.white)),
+                children: [
+                  SizedBox(
+                    height: 400, // Увеличиваем высоту SizedBox
+                    child: ListView(
+                      children: [
+                        for (final tag in _getUniqueTags().toList()..sort())
+                          CheckboxListTile(
+                            title: Text(tag, style: TextStyle(color: Colors.white)),
+                            checkColor: Colors.blue,
+                            value: _selectedTags.contains(tag),
+                            activeColor: Colors.white,
+                            onChanged: (bool? value) {
+                              Navigator.pop(context);
 
-            ExpansionTile(
-              title: const Text('Теги', style: TextStyle(color: Colors.white)),
-              children: <Widget>[
-                for (final tag in _getUniqueTags())
-                  CheckboxListTile(
-                    title: Text(tag, style: TextStyle(color: Colors.white)),
-                    value: _selectedTags.contains(tag),
-                    onChanged: (bool? value) {
-                      Navigator.pop(context);
-
-                      setState(() {
-                        if (value != null) {
-                          if (value) {
-                            _selectedTags.add(tag);
-                          } else {
-                            _selectedTags.remove(tag);
-                          }
-                        }
-                      });
-                    },
+                              setState(() {
+                                if (value != null) {
+                                  if (value) {
+                                    _selectedTags.add(tag);
+                                  } else {
+                                    _selectedTags.remove(tag);
+                                  }
+                                }
+                              });
+                            },
+                          ),
+                      ],
+                    ),
                   ),
-              ],
+                ],
+              ),
             ),
-            const Spacer(), // Добавляем Spacer для размещения текста внизу
-
-            // Padding( // Добавляем отступы вокруг текста
-            //   padding: const EdgeInsets.all(16.0),
-            //   child: InkWell( // InkWell для обработки нажатий
-            //     onTap: () async {
-            //       final url = Uri.parse('https://fgsiz.ru/'); // Замени на свой URL
-            //       if (await canLaunchUrl(url)) {
-            //         await launchUrl(url);
-            //       } else {
-            //         // Обработка ошибки, если URL не может быть открыт
-            //         ScaffoldMessenger.of(context).showSnackBar(
-            //           const SnackBar(content: Text('Не удалось открыть URL')),
-            //         );
-            //       }
-            //     },
-            //     child: const Center( // Центрируем текст
-            //       child: Text(
-            //         'Наш сайт',
-            //         style: TextStyle(color: Colors.white),
-            //       ),
-            //     ),
-            //   ),
-            // ),
           ],
         ),
       ),
@@ -169,48 +191,71 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   List<Product> _filterProducts() {
-    var filtered = products;
+    final lowerCaseQuery = _searchQuery.toLowerCase();
+    final queryWords = lowerCaseQuery.split(' '); // Разбиваем запрос на слова
 
-    if (_searchQuery.isNotEmpty) {
-      filtered = filtered.where((product) =>
-      product.name.toLowerCase().contains(_searchQuery.toLowerCase()) ||
-          product.description
-              .toLowerCase()
-              .contains(_searchQuery.toLowerCase()))
-          .toList();
+    // Начальная фильтрация по поисковому запросу (если есть)
+    var filtered = _searchQuery.isEmpty
+        ? products
+        : products.where((product) {
+      final lowerCaseName = product.name.toLowerCase();
+      final lowerCaseDescription = product.description.toLowerCase();
+      return queryWords.every((word) => lowerCaseName.contains(word) || lowerCaseDescription.contains(word));
+    }).toList();
+
+
+    // Фильтрация по выбранному фильтру (если есть)
+    if (_selectedFilter != null && _selectedFilter!.isNotEmpty) {
+      filtered = filtered.where((product) {
+        return product.designations.any((tag) => tag == _selectedFilter);
+      }).toList();
     }
 
+    // Фильтрация по выбранным тегам (если есть)
     if (_selectedTags.isNotEmpty) {
-      filtered = filtered
-          .where((product) =>
-          product.designations.any((tag) => _selectedTags.contains(tag)))
-          .toList();
+      filtered = filtered.where((product) {
+        return product.designations.any((tag) => _selectedTags.contains(tag));
+      }).toList();
     }
 
     return filtered;
   }
 
-  Future<bool> _isVerticalImage(String imageUrl) async {
-    final ByteData data = await rootBundle.load(imageUrl);
-    final Uint8List bytes = data.buffer.asUint8List();
-    final image = img.decodeImage(bytes);
-    return image!.height > image.width;
-  }
 
 
   Widget _buildProductCard(Product product) {
+    int currentImageIndex = 0;
+    final pageController = PageController();
+
+    // Определяем цвет рамки
+    Color borderColor = Colors.transparent;
+    if (product.designations.contains('FFP1')) {
+      borderColor = Colors.yellow;
+    } else if (product.designations.contains('FFP2')) {
+      borderColor = Colors.green;
+    } else if (product.designations.contains('FFP3')) {
+      borderColor = Colors.red;
+    }
+
     return GestureDetector(
       onTap: () {
         Navigator.push(
             context,
             MaterialPageRoute(
-                builder: (context) =>
-                    ProductDetailsScreen(product: product))
+                builder: (context) => ProductDetailsScreen(product: product)
+            )
         );
       },
       child: Card(
         elevation: 2.0,
         margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
+          side: BorderSide(
+            color: borderColor,
+            width: 2.0,
+          ),
+        ),
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
@@ -218,46 +263,71 @@ class _MyHomePageState extends State<MyHomePage> {
             children: [
               SizedBox(
                 height: 200,
-                child: FutureBuilder<List<bool>>(
-                  future: Future.wait(product.imageUrls.map(_isVerticalImage)),
-                  builder: (context, snapshot) {
-                    if (snapshot.hasData) {
-                      final verticalImages = product.imageUrls
-                          .asMap()
-                          .entries
-                          .where((entry) => snapshot.data![entry.key])
-                          .map((entry) => entry.value)
-                          .toList();
-                      final horizontalImages = product.imageUrls
-                          .where((imageUrl) =>
-                      !verticalImages.contains(imageUrl))
-                          .toList();
-
-                      if (verticalImages.isNotEmpty) {
-                        return _buildVerticalImages(verticalImages);
-                      } else if (horizontalImages.isNotEmpty) {
-                        return _buildHorizontalImages(horizontalImages);
-                      } else {
-                        return const Center(child: Text('Нет изображений'));
-                      }
-                    } else if (snapshot.hasError) {
-                      return Center(child: Text('Ошибка: ${snapshot.error}'));
-                    } else {
-                      return const Center(child: CircularProgressIndicator());
-                    }
-                  },
+                child: Stack(
+                  children: [
+                    PageView.builder(
+                      controller: pageController,
+                      itemCount: product.imageUrls.length,
+                      itemBuilder: (context, index) {
+                        return _buildProductImage(product.imageUrls, index);
+                      },
+                      onPageChanged: (index) {
+                        setState(() {
+                          currentImageIndex = index;
+                        });
+                      },
+                    ),
+                    if (product.imageUrls.length > 1)
+                      Positioned.fill(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            IconButton(
+                              icon: const Icon(Icons.arrow_back_ios),
+                              onPressed: () {
+                                if (pageController.page! > 0) {
+                                  pageController.previousPage(
+                                    duration: const Duration(milliseconds: 300),
+                                    curve: Curves.ease,
+                                  );
+                                }
+                              },
+                            ),
+                            IconButton(
+                              icon: const Icon(Icons.arrow_forward_ios),
+                              onPressed: () {
+                                if (pageController.page! < product.imageUrls.length - 1) {
+                                  pageController.nextPage(
+                                    duration: const Duration(milliseconds: 300),
+                                    curve: Curves.ease,
+                                  );
+                                }
+                              },
+                            ),
+                          ],
+                        ),
+                      ),
+                  ],
                 ),
               ),
               const SizedBox(height: 10.0),
               Text(
                 product.name,
                 style: const TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 18.0,
+                  fontFamily: 'Open Sans',
+                  fontWeight: FontWeight.w700,
+                  fontSize: 16,
                 ),
               ),
               const SizedBox(height: 5.0),
-              Text(product.standard),
+              Text(
+                product.standard,
+                style: const TextStyle(
+                  fontFamily: 'Open Sans',
+                  fontWeight: FontWeight.w500,
+                  fontSize: 12,
+                ),
+              ),
               const SizedBox(height: 5.0),
               Text(
                 product.description.length > 100
@@ -265,6 +335,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     : product.description,
                 maxLines: 3,
                 overflow: TextOverflow.ellipsis,
+                style: const TextStyle(fontSize: 14),
               ),
             ],
           ),
@@ -273,39 +344,55 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  Widget _buildHorizontalImages(List<String> imageUrls) {
-    return PageView.builder(
-      itemCount: imageUrls.length,
-      itemBuilder: (context, index) {
-        return Image.asset(
-          imageUrls[index],
-          fit: BoxFit
-              .contain, // Сжимаем изображение, чтобы оно поместилось в контейнер
-        );
+  Widget _buildProductImage(List<String> imageUrls, int index) {
+    if (imageUrls.isEmpty) return const SizedBox();
+    return FutureBuilder<bool>(
+      future: _isVerticalImage(imageUrls[index]),
+      builder: (context, snapshot) {
+        if (snapshot.hasData) {
+          return DecoratedBox( // Используем DecoratedBox
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10), // Закругленные углы
+              image: DecorationImage(
+                image: AssetImage(imageUrls[index]), // AssetImage вместо Image.asset
+                fit: BoxFit.contain,
+              ),
+            ),
+          );
+        } else if (snapshot.hasError) {
+          return Center(child: Text('Ошибка: ${snapshot.error}'));
+        } else {
+          return const Center(child: CircularProgressIndicator());
+        }
       },
     );
   }
 
+  Widget _buildHorizontalImages(List<String> imageUrls, int currentIndex) { // Добавили currentIndex
+    final pageController = PageController(initialPage: currentIndex);
 
-  Widget _buildVerticalImages(List<String> verticalImages) {
-    if (verticalImages.length >= 2) {
+    return PageView.builder(
+      controller: pageController, // Используем контроллер для управления страницей
+      itemCount: imageUrls.length,
+      itemBuilder: (context, index) {
+        return Image.asset(imageUrls[index], fit: BoxFit.contain);
+      },
+    );
+  }
+
+  Widget _buildVerticalImages(List<String> imageUrls) {
+    if (imageUrls.length >= 2) {
       return Row(
         children: [
-          for (final imageUrl in verticalImages.take(2))
+          for (final imageUrl in imageUrls.take(2))
             Expanded(
-              child: Image.asset(
-                imageUrl,
-                fit: BoxFit.contain, //
-              ),
+              child: Image.asset(imageUrl, fit: BoxFit.contain),
             ),
         ],
       );
-    } else if (verticalImages.isNotEmpty) {
-      return Center( // Добавлено Center
-        child: Image.asset(
-          verticalImages[0],
-          fit: BoxFit.contain,
-        ),
+    } else if (imageUrls.isNotEmpty) {
+      return Center(
+        child: Image.asset(imageUrls.first, fit: BoxFit.contain),
       );
     } else {
       return const SizedBox.shrink();
