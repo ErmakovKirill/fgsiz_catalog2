@@ -3,7 +3,7 @@
 Fgsiz product catalog
 
 Здесь предствален, проэкт каталога для скачивания apk перейдите по ссылке ниже 
-https://disk.yandex.ru/d/37PByHsiLjotnA
+https://disk.yandex.ru/d/DvnC4Y8RQOMNcg
 Для создания ios версии необходимо что то на macOS и данная программа https://developer.apple.com/xcode/, в нее нужно будет установить плагин flutter ввести копанды flutter pub get и flutter upgrade dependeces,
 в теории еслит манифест ios не сильно отличается от android то сразу проэкт можно будет собрать и собрать в релизный установщик
 
