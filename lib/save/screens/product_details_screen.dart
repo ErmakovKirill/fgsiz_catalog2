@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:fgsiz/data/product.dart';
 
+
+
 class ProductDetailsScreen extends StatefulWidget {
   final Product product;
+
   const ProductDetailsScreen({super.key, required this.product});
 
   @override
@@ -12,6 +15,7 @@ class ProductDetailsScreen extends StatefulWidget {
 class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
   late PageController _pageController;
   int _currentPage = 0;
+
 
   @override
   void initState() {
@@ -24,6 +28,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
     _pageController.dispose();
     super.dispose();
   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -49,10 +54,10 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                   children: [
                     PageView.builder(
                       controller: _pageController,
-                      itemCount: widget.product.imageUrls.length,
+                      itemCount: widget.product.imageUrls.length, // Используем widget.product
                       itemBuilder: (context, index) {
                         return Image.asset(
-                          widget.product.imageUrls[index],
+                          widget.product.imageUrls[index], // Используем widget.product
                           fit: BoxFit.contain,
                         );
                       },
@@ -62,7 +67,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                         });
                       },
                     ),
-                    if (widget.product.imageUrls.length > 1)
+                    if (widget.product.imageUrls.length > 1) // Отображаем стрелки, если есть несколько изображений
                       Positioned.fill(
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -92,6 +97,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                           ],
                         ),
                       ),
+
                   ],
                 ),
               ),

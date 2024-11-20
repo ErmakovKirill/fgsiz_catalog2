@@ -49,7 +49,6 @@ class _MyHomePageState extends State<MyHomePage> {
   String _searchQuery = '';
   final List<String> _selectedTags = [];
   String? _selectedFilter;
-  bool _showMarkingInfo = false;
 
   Future<Uint8List?> _compressImage(Uint8List imageData) async {
     try {
@@ -92,7 +91,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(
           widget.title,
           style: const TextStyle(
-            fontSize: 18,
+            fontSize: 18, // Уменьшаем размер шрифта заголовка
           ),
         ),
         backgroundColor: const Color(0xFFe3e2e2),
@@ -116,7 +115,7 @@ class _MyHomePageState extends State<MyHomePage> {
               height: 48,
               child: TextField(
                 onChanged: (value) {
-                  setState(() {
+                  setState(() { // Добавляем setState сюда
                     _searchQuery = value;
                   });
                 },
@@ -133,7 +132,7 @@ class _MyHomePageState extends State<MyHomePage> {
           Expanded(
             child: GridView.builder( // Используем GridView.builder
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: (orientation == Orientation.portrait) ? 1 : 2,
+                crossAxisCount: (orientation == Orientation.portrait) ? 1 : 2, // 1 колонка в портретной ориентации, 2 - в ландшафтной
                 childAspectRatio: (orientation == Orientation.portrait) ? 1 : 1.3,
                 crossAxisSpacing: 10,
                 mainAxisSpacing: 10,
@@ -151,160 +150,55 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       drawer: Drawer(
         backgroundColor: Colors.blue,
-        child: Stack(
+        child: ListView(
           children: [
-            ListView(
-              children: [
-                const DrawerHeader(
-                  decoration: BoxDecoration(color: Colors.blue),
-                  child: Center(
-                    child: Text(
-                      'Фильтры',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                  ),
-                ),
-                const Divider(color: Colors.white),
-                Theme(
-                  data: Theme.of(context).copyWith(
-                    unselectedWidgetColor: Colors.white,
-                  ),
-                  child: ExpansionTile(
-                    title: const Text('Теги', style: TextStyle(color: Colors.white)),
-                    children: [
-                      SizedBox(
-                        height: 400,
-                        child: ListView(
-                          children: [
-                            for (final tag in _getUniqueTags().toList()..sort())
-                              CheckboxListTile(
-                                title: Text(tag, style: TextStyle(color: Colors.white)),
-                                checkColor: Colors.blue,
-                                value: _selectedTags.contains(tag),
-                                activeColor: Colors.white,
-                                onChanged: (bool? value) {
-                                  Navigator.pop(context);
-
-                                  setState(() {
-                                    if (value != null) {
-                                      if (value) {
-                                        _selectedTags.add(tag);
-                                      } else {
-                                        _selectedTags.remove(tag);
-                                      }
-                                    }
-                                  });
-                                },
-                              ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                const Spacer(),
-                Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: ElevatedButton(
-                    onPressed: () {
-                      setState(() {
-                        _showMarkingInfo = !_showMarkingInfo;
-                      });
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.white,
-                      foregroundColor: Colors.blue,
-                      textStyle: const TextStyle(fontSize: 16),
-                    ),
-
-                    child: const Text('Подсказки по маркировкам', style: TextStyle(fontSize: 16)),
-                  ),
-                ),
-              ],
-            ),
-            if (_showMarkingInfo)
-              Positioned.fill(
-                child: GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      _showMarkingInfo = false;
-                    });
-                  },
-                  child: Container(
-                    color: Colors.black.withOpacity(0.5),
-                    child: Center(
-                      child: Container(
-                        width: 300,
-                        padding: const EdgeInsets.all(16),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: SingleChildScrollView(
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              RichText(
-                                text: TextSpan(
-                                  style: const TextStyle(fontFamily: 'Open Sans', fontSize: 14, color: Colors.black),
-                                  children: <TextSpan>[
-                                    TextSpan(
-                                      text: 'FFP1 ',
-                                      style: const TextStyle(
-                                        backgroundColor: Colors.yellow, // Желтый фон
-                                      ),
-                                    ),
-                                    const TextSpan(
-                                      text: '(4 ПДК) - Низкий уровень защиты\n',
-                                    ),
-                                    TextSpan(
-                                      text: 'FFP2 ',
-                                      style: const TextStyle(
-                                        backgroundColor: Colors.green, // Зеленый фон
-                                      ),
-                                    ),
-                                    const TextSpan(
-                                      text: '(12 ПДК) - Средний уровень защиты\n',
-                                    ),
-                                    TextSpan(
-                                      text: 'FFP3 ',
-                                      style: const TextStyle(
-                                        backgroundColor: Colors.red, // Красный фон
-                                      ),
-                                    ),
-                                    const TextSpan(
-                                      text: '(50 ПДК) - Высокий уровень защиты\n\n'
-                                          'NR - Одноразовое использование\n'
-                                          'R - Многоразовое использование\n'
-                                          'D - Устойчивость к запылению\n\n'
-                                          'ШБ-1 - Несобранный респиратор без клапана выдоха\n'
-                                          'СБ - Собранный респиратор без клапана выдоха\n'
-                                          'СБ кл - Собранный респиратор с клапаном выдоха\n'
-                                          'ФП - Изделие изготовлено из фильтрующего материала ФПП\n',
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              ElevatedButton(
-                                onPressed: () {
-                                  setState(() {
-                                    _showMarkingInfo = false;
-                                  });
-                                },
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.blue,
-                                ),
-                                child: const Text('Закрыть', style: TextStyle(color: Colors.white)),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
+            const DrawerHeader(
+              decoration: BoxDecoration(color: Colors.blue),
+              child: Center( // Центрируем текст "Фильтры"
+                child: Text(
+                  'Фильтры',
+                  style: TextStyle(color: Colors.white),
                 ),
               ),
+            ),
+            const Divider(color: Colors.white),
+            Theme(
+              data: Theme.of(context).copyWith(
+                unselectedWidgetColor: Colors.white,
+              ),
+              child: ExpansionTile(
+                title: const Text('Теги', style: TextStyle(color: Colors.white)),
+                children: [
+                  SizedBox(
+                    height: 400, // Увеличиваем высоту SizedBox
+                    child: ListView(
+                      children: [
+                        for (final tag in _getUniqueTags().toList()..sort())
+                          CheckboxListTile(
+                            title: Text(tag, style: TextStyle(color: Colors.white)),
+                            checkColor: Colors.blue,
+                            value: _selectedTags.contains(tag),
+                            activeColor: Colors.white,
+                            onChanged: (bool? value) {
+                              Navigator.pop(context);
+
+                              setState(() {
+                                if (value != null) {
+                                  if (value) {
+                                    _selectedTags.add(tag);
+                                  } else {
+                                    _selectedTags.remove(tag);
+                                  }
+                                }
+                              });
+                            },
+                          ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
@@ -313,8 +207,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
   List<Product> _filterProducts() {
     final lowerCaseQuery = _searchQuery.toLowerCase();
-    final queryWords = lowerCaseQuery.split(' ');
+    final queryWords = lowerCaseQuery.split(' '); // Разбиваем запрос на слова
 
+    // Начальная фильтрация по поисковому запросу (если есть)
     var filtered = _searchQuery.isEmpty
         ? products
         : products.where((product) {
@@ -323,12 +218,15 @@ class _MyHomePageState extends State<MyHomePage> {
       return queryWords.every((word) => lowerCaseName.contains(word) || lowerCaseDescription.contains(word));
     }).toList();
 
+
+    // Фильтрация по выбранному фильтру (если есть)
     if (_selectedFilter != null && _selectedFilter!.isNotEmpty) {
       filtered = filtered.where((product) {
         return product.designations.any((tag) => tag == _selectedFilter);
       }).toList();
     }
 
+    // Фильтрация по выбранным тегам (если есть)
     if (_selectedTags.isNotEmpty) {
       filtered = filtered.where((product) {
         return product.designations.any((tag) => _selectedTags.contains(tag));
@@ -338,10 +236,13 @@ class _MyHomePageState extends State<MyHomePage> {
     return filtered;
   }
 
+
+
   Widget _buildProductCard(Product product) {
     int currentImageIndex = 0;
     final pageController = PageController();
 
+    // Определяем цвет рамки
     Color borderColor = Colors.transparent;
     if (product.designations.contains('FFP1')) {
       borderColor = Colors.yellow;
@@ -373,10 +274,10 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
+            crossAxisAlignment: CrossAxisAlignment.stretch, // Растягиваем по горизонтали
             children: [
               SizedBox(
-                height: (orientation == Orientation.portrait) ? 200 : 150,
+                height: (orientation == Orientation.portrait) ? 200 : 150, // Высота изображения в зависимости от ориентации
                 child: Stack(
                   children: [
                     PageView.builder(
@@ -425,7 +326,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
               const SizedBox(height: 10.0),
-              Expanded(
+              Expanded( // Используем Expanded для названия
                 child: Text(
                   product.name,
                   style: const TextStyle(
@@ -446,14 +347,14 @@ class _MyHomePageState extends State<MyHomePage> {
                   fontSize: 12,
                 ),
                 overflow: TextOverflow.ellipsis,
-                maxLines: (orientation == Orientation.portrait) ? 2 : 1,
+                maxLines: (orientation == Orientation.portrait) ? 2 : 1, // Ограничиваем количество строк в зависимости от ориентации
               ),
               const SizedBox(height: 5.0),
               Expanded( // Используем Expanded для описания
                 child: Text(
                   product.description,
                   overflow: TextOverflow.ellipsis,
-                  maxLines: (orientation == Orientation.portrait) ? 3 : 2,
+                  maxLines: (orientation == Orientation.portrait) ? 3 : 2,  // Ограничиваем количество строк в зависимости от ориентации
                   style: const TextStyle(fontSize: 14),
                 ),
               ),
